@@ -3,16 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PlacesPage } from './places.page';
-import { PlacesRoutingModule } from './places-routing.module';
+import { ToursPage } from './tours.page';
+import { ToursRoutingModule } from './tours-routing.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
     IonicModule,
-    PlacesRoutingModule
+    ToursRoutingModule
   ],
-  declarations: [PlacesPage]
+  declarations: [ToursPage]
 })
-export class PlacesPageModule {}
+export class ToursPageModule {}

@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'places', pathMatch: 'full' },
+  { path: '', redirectTo: 'tours', pathMatch: 'full' },
   { path: 'auth', loadChildren: './auth/auth.module#AuthPageModule' },
-  { path: 'places', loadChildren: './places/places.module#PlacesPageModule' },
+  { path: 'tours', loadChildren: './tours/tours.module#ToursPageModule' },
   { path: 'bookings', loadChildren: './bookings/bookings.module#BookingsPageModule' }
 ];
 

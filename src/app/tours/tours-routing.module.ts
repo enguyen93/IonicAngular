@@ -1,14 +1,14 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { PlacesPage } from "./places.page";
+import { ToursPage } from "./tours.page";
 import { DiscoverPage } from "./discover/discover.page";
 import { OffersPage } from "./offers/offers.page";
 
 const routes: Routes = [
   {
-    // This route will be starting with /places/tabs... because This routing module is inside Places
+    // This route will be starting with /tours/tabs... because This routing module is inside Tours
     path: "tabs",
-    component: PlacesPage,
+    component: ToursPage,
     children: [
       {
         path: "discover",
@@ -18,8 +18,8 @@ const routes: Routes = [
                 loadChildren: './discover/discover.module#DiscoverPageModule'
             },
             {
-                path: ':placeId',
-                loadChildren: './discover/place-detail/place-detail.module#PlaceDetailPageModule'
+                path: ':tourId',
+                loadChildren: './discover/tour-detail/tour-detail.module#TourDetailPageModule'
             }
         ]
       },
@@ -35,25 +35,25 @@ const routes: Routes = [
                 loadChildren: './offers/new-offer/new-offer.module#NewOfferPageModule'
             },
             {
-                path: ':placeId',
+                path: ':tourId',
                 loadChildren: './offers/offer-bookings/offer-bookings.module#OfferBookingsPageModule'
             },
             {
-                path: 'edit/"placeId',
+                path: 'edit/:tourId',
                 loadChildren: './offers/edit-offer/edit-offer.module#EditOfferPageModule'
             }
         ]
       },
       {
           path: '',
-          redirectTo: '/places/tabs/discover',
+          redirectTo: '/tours/tabs/discover',
           pathMatch: 'full'
       }
     ]
   },
   {
       path: '',
-      redirectTo: '/places/tabs/discover',
+      redirectTo: '/tours/tabs/discover',
       pathMatch: 'full'
   }
 ];
@@ -63,4 +63,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class PlacesRoutingModule {}
+export class ToursRoutingModule {}

@@ -1,4 +1,4 @@
-export class Place {
+export class Tour {
     constructor(
         public id: string,
         public title: string,
